@@ -14,6 +14,10 @@ export function App() {
   const [state, setState] = useState(0);
 
   function handleAddNewAssignments() {
+    if (newAssignment.length == 0) {
+      alert("Escreva algo para criar uma nova tarefa!")
+      return
+    }
     setAssignments((prevState) => [
       ...prevState,
       { check: false, content: newAssignment },
@@ -21,11 +25,12 @@ export function App() {
     setNewAssignment("");
   }
 
-  function handleNewAssignments(newAssignment) {
-    setNewAssignment(newAssignment);
-  }
-
   function handleAssignmentsDelete(deleted) {
+    if (state == 0) {
+      setState(1);
+    } else if (state == 1) {
+      setState(0)
+    }
     const assignmentsWithoutDelete = assignments.filter(
       (assignment) => assignment.content !== deleted
     );
@@ -66,8 +71,8 @@ export function App() {
       <div className={styles.wrapper}>
         <div className={styles.inputAndButton}>
           <Input
-            handleNewAssignments={handleNewAssignments}
             newAssignment={newAssignment}
+            setNewAssignment={setNewAssignment}
           />
           <Button onClick={handleAddNewAssignments} />
         </div>

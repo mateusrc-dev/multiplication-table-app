@@ -1,15 +1,13 @@
 import styles from "./Input.module.css";
 import { useState, useEffect } from "react";
 
-export function Input({ newAssignment, handleNewAssignments }) {
-  const [input, setInput] = useState("");
+export function Input({ newAssignment, handleNewAssignments, setNewAssignment }) {
 
-  useEffect(() => {
-    function handleInput() {
-      handleNewAssignments(input);
-    }
-    handleInput();
-  }, [input]);
+
+  function handleNewAssignmentChange(event) {
+    setNewAssignment(event.target.value)
+  }
+
 
   return (
     <input
@@ -17,7 +15,7 @@ export function Input({ newAssignment, handleNewAssignments }) {
       type="text"
       placeholder="Adicione uma nova tarefa!"
       value={newAssignment}
-      onChange={(e) => setInput(e.target.value)}
+      onChange={handleNewAssignmentChange}
     />
   );
 }
