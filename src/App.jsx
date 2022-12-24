@@ -66,7 +66,7 @@ export function App() {
   }, [state]);
 
   return (
-    <main>
+    <main className={styles.main}>
       <Header />
       <div className={styles.wrapper}>
         <div className={styles.inputAndButton}>
@@ -74,7 +74,7 @@ export function App() {
             newAssignment={newAssignment}
             setNewAssignment={setNewAssignment}
           />
-          <Button onClick={handleAddNewAssignments} />
+          <Button onClick={handleAddNewAssignments} disabled={newAssignment.length == 0} />
         </div>
         <div className={styles.tasks}>
           <div className={styles.tasksCreated}>

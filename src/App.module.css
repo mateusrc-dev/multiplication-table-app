@@ -1,3 +1,26 @@
+.main {
+  overflow: auto;
+  height: 100vh;
+  padding: 0 0 2rem 0;
+}
+
+.main::-webkit-scrollbar {
+  width: 10px;
+}
+.main::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: 5px;
+  background-clip: padding-box; /*para as bordas ficarem transparentes e com isso dar a impressão que tem uma margem nos lados da borda*/
+  border: 1px solid transparent;
+}
+.main::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gray-200);
+  border-radius: 0px;
+  border-radius: 5px;
+  background-clip: padding-box; /*para as bordas ficarem transparentes e com isso dar a impressão que tem uma margem nos lados da borda*/
+  border: 1px solid transparent;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -90,27 +113,6 @@
   flex-direction: column;
   gap: 0.75rem;
   width: 100%;
-  overflow-y: auto;
-  height: 18rem;
-}
-
-.posts::-webkit-scrollbar {
-  width: 15px;
-}
-.posts::-webkit-scrollbar-thumb {
-  background: var(--gray-400);
-  border-radius: 10px;
-  width: 0px;
-  background-clip: padding-box; /*para as bordas ficarem transparentes e com isso dar a impressão que tem uma margem nos lados da borda*/
-  border: 5px solid transparent;
-}
-.posts::-webkit-scrollbar-thumb:hover {
-  background-color: var(--gray-200);
-  border-radius: 0px;
-  width: 0px;
-  border-radius: 10px;
-  background-clip: padding-box; /*para as bordas ficarem transparentes e com isso dar a impressão que tem uma margem nos lados da borda*/
-  border: 5px solid transparent;
 }
 
 .nullAssignments {

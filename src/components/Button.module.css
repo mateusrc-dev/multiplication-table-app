@@ -14,11 +14,16 @@
   transition: filter 0.5s;
 }
 
-.button:hover {
+.button:not(:disabled):hover {
   filter: brightness(0.8);
 }
 
 .button svg {
   color: var(--gray-200);
   font-size: 0.9375rem;
+}
+
+.button:disabled {
+  filter: brightness(0.6);
+  cursor: not-allowed;
 }
