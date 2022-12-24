@@ -6,8 +6,8 @@ export function Post({ content }) {
     <div className={styles.container}>
       <div className={styles.checkAndContent}>
         <div className={styles.checkbox}>
-          <input type="checkbox" id="Checkbox" />
-          <label htmlFor="Checkbox"></label>
+          <input type="checkbox" />
+          <label></label>
         </div>
         <p>{content}</p>
       </div>
