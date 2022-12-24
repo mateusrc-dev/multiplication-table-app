@@ -1,10 +1,14 @@
+import './global.css'
 import { Post } from "./components/Post";
+import { Header } from "./components/Header";
 
 export function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <Post content={"qualquer coisa suahauhsaushaushaushu vou comer uma puta!"} />
+      <Header />
+      <Post
+        content={"qualquer coisa suahauhsaushaushaushu!!!"}
+      />
     </div>
   );
 }
