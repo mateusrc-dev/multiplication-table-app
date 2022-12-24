@@ -5,17 +5,13 @@ import { Post } from "./components/Post";
 import { Header } from "./components/Header";
 import { Input } from "./components/Input";
 import { Button } from "./components/Button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function App() {
-  const [assignments, setAssignments] = useState([
-    {
-      check: true,
-      content:
-        "assistir todos os episódios de naruto, naruto shippuden e boruto",
-    },
-  ]);
+  const [assignments, setAssignments] = useState([]);
   const [newAssignment, setNewAssignment] = useState("");
+  const [countCheks, setCountCheks] = useState(0);
+  const [state, setState] = useState(0);
 
   function handleAddNewAssignments() {
     setAssignments((prevState) => [
@@ -36,6 +32,34 @@ export function App() {
     setAssignments(assignmentsWithoutDelete);
   }
 
+  function handleCheckAssignment(index) {
+    if (state == 0) {
+      setState(1);
+    } else if (state == 1) {
+      setState(0)
+    }
+    let Assignments = assignments;
+    if (Assignments[index].check == true) {
+      Assignments[index].check = false;
+    } else if (Assignments[index].check == false) {
+      Assignments[index].check = true;
+    }
+    setAssignments(Assignments);
+  }
+
+  useEffect(() => {
+    function handleCheck() {
+      let checksTrue = 0;
+      for (let i = 0; assignments.length > i; i++) {
+        if (assignments[i].check == true) {
+          checksTrue += 1
+        }
+      }
+      return checksTrue
+    }
+    setCountCheks(handleCheck())
+  }, [state]);
+
   return (
     <main>
       <Header />
@@ -54,16 +78,18 @@ export function App() {
           </div>
           <div className={styles.completedTasks}>
             <strong>Concluídas</strong>
-            <span>2 de {assignments.length}</span>
+            <span>{countCheks} de {assignments.length}</span>
           </div>
         </div>
         <div className={styles.posts}>
-          {assignments.map((assignment) => (
+          {assignments.map((assignment, index) => (
             <Post
               key={String(assignment.content)}
               content={assignment.content}
               check={assignment.check}
               handleAssignmentsDelete={handleAssignmentsDelete}
+              handleCheckAssignment={handleCheckAssignment}
+              index={index}
             />
           ))}
         </div>
