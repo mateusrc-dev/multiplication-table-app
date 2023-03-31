@@ -255,7 +255,7 @@ export function App() {
                   100).
                 </p>
                 <h1 style={{ fontSize: 16 }}>
-                  Selecione qual tabuada você quer ver:
+                  Selecione quais tabuadas você quer deixar visíveis:
                 </h1>
                 <ContainerSelectColumns>
                   <button
