@@ -506,7 +506,7 @@ export function App() {
               ) : (
                 <Loading>
                   <h1 style={{ textAlign: "center" }}>
-                    Selecione alguma tabuada para ser exibida!
+                    Ops, selecione alguma tabuada para ser exibida!
                   </h1>
                   <WarningCircle size="100px" />
                 </Loading>
