@@ -37,7 +37,6 @@ export function App() {
   const [eight, setEight] = useState([16]);
   const [nine, setNine] = useState([18]);
   const [ten, setTen] = useState([20]);
-  const [number, setNumber] = useState(0);
   const [houses, setHouses] = useState(98);
   const [changeHouses, setChangeHouses] = useState(0);
   const [columnOne, setColumnOne] = useState(true);
@@ -148,70 +147,52 @@ export function App() {
   }
 
   useEffect(() => {
-    function handleCountOne() {
+    function handleCount() {
+      setIsLoading(true);
       let items = [2];
       for (let i = 0; houses > i; i++) {
         items.push(Number(items[i]) + 1);
       }
       setOne(items);
-    }
-    function handleCountTwo() {
+
       for (let i = 0; 98 > i; i++) {
         setTwo((prevState) => [...prevState, prevState[i] + 2]);
       }
-    }
-    function handleCountThree() {
+
       for (let i = 0; 98 > i; i++) {
         setThree((prevState) => [...prevState, prevState[i] + 3]);
       }
-    }
-    function handleCountFour() {
+
       for (let i = 0; 98 > i; i++) {
         setFour((prevState) => [...prevState, prevState[i] + 4]);
       }
-    }
-    function handleCountFive() {
+
       for (let i = 0; 98 > i; i++) {
         setFive((prevState) => [...prevState, prevState[i] + 5]);
       }
-    }
-    function handleCountSix() {
+
       for (let i = 0; 98 > i; i++) {
         setSix((prevState) => [...prevState, prevState[i] + 6]);
       }
-    }
-    function handleCountSeven() {
+
       for (let i = 0; 98 > i; i++) {
         setSeven((prevState) => [...prevState, prevState[i] + 7]);
       }
-    }
-    function handleCountEight() {
+
       for (let i = 0; 98 > i; i++) {
         setEight((prevState) => [...prevState, prevState[i] + 8]);
       }
-    }
-    function handleCountNine() {
+
       for (let i = 0; 98 > i; i++) {
         setNine((prevState) => [...prevState, prevState[i] + 9]);
       }
-    }
-    function handleCountTen() {
+
       for (let i = 0; 98 > i; i++) {
         setTen((prevState) => [...prevState, prevState[i] + 10]);
       }
+      setIsLoading(false);
     }
-    setIsLoading(true);
-    handleCountOne();
-    handleCountTwo();
-    handleCountThree();
-    handleCountFour();
-    handleCountFive();
-    handleCountSix();
-    handleCountSeven();
-    handleCountEight();
-    handleCountNine();
-    handleCountTen();
-    setIsLoading(false);
+    handleCount();
   }, [houses]);
 
   return (
