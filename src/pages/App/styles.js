@@ -17,6 +17,8 @@ export const ColumnFirst = styled.div`
   padding: 30px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   height: 530px;
+  width: 900px;
+  border-radius: 10px;
 `;
 
 export const ContainerTwo = styled.div`
@@ -33,6 +35,7 @@ export const ContainerSelectColumns = styled.div`
   gap: 20px;
   align-items: center;
   margin-bottom: 10px;
+  justify-content: space-around;
 `;
 
 export const Table = styled.table`
