@@ -246,7 +246,7 @@ export function App() {
             <Container>
               <ColumnFirst>
                 <h1>
-                  Seja bem vindo, <i>{name}!</i>
+                  Seja bem vindo(a), <i>{name}!</i>
                 </h1>
                 <p style={{ textAlign: "justify" }}>
                   Abaixo você pode <strong>configurar sua tabuada</strong>, você
