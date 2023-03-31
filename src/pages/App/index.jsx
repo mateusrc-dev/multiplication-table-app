@@ -259,24 +259,6 @@ export function App() {
                 </h1>
                 <ContainerSelectColumns>
                   <button
-                    onClick={() => handleSelectColumn(1)}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      marginTop: -15,
-                      cursor: "pointer",
-                    }}
-                  >
-                    <p
-                      style={{
-                        fontWeight: columnOne ? "bold" : "normal",
-                      }}
-                    >
-                      1
-                    </p>
-                    {columnOne ? <Eye /> : <EyeClosed />}
-                  </button>
-                  <button
                     onClick={() => handleSelectColumn(2)}
                     style={{
                       background: "none",
@@ -461,8 +443,7 @@ export function App() {
                   Resetar configurações <Sliders size="30px" />
                 </ButtonComponentReset>
               </ColumnFirst>
-              {columnOne ||
-              columnTwo ||
+              {columnTwo ||
               columnThree ||
               columnFour ||
               columnFive ||
